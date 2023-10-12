@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --blue: #86b1ff;
+  --green: #00DFA2;
+  --red: #BB2525;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+@import './scss/buttons';
+
+
