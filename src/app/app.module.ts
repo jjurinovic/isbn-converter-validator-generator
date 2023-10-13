@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
+import { TitleComponent } from './components/title/title.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TitleComponent
   ],
   imports: [
     BrowserModule,
