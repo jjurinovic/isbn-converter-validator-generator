@@ -1,3 +1,67 @@
 <div class="container">
   <app-title></app-title>
+  <form [formGroup]="isbnForm" (ngSubmit)="validate()">
+    <div class="input-container">
+      <input
+      class="isbn-input"
+        [ngClass]="{
+          'isbn-input--valid': isSubmitted && isIsbnValid,
+          'isbn-input--invalid': isSubmitted && !isIsbnValid
+        }"
+        type="text"
+        formControlName="isbn"
+        placeholder="Enter your ISBN"
+      />
+      <div class="isbn-input__icon">
+        <app-validation-icon
+          *ngIf="isSubmitted"
+          [valid]="isIsbnValid"
+        ></app-validation-icon>
+      </div>
+    </div>
+
+    <small class="isbn-errors" *ngIf="hasPatternError()"
+      >Only numbers and hypens are allowed</small
+    >
+
+    <div
+      class="validation-message"
+      [ngClass]="{
+        'validation-message--valid': isSubmitted && isIsbnValid,
+        'validation-message--invalid': isSubmitted && !isIsbnValid
+      }"
+      *ngIf="isSubmitted"
+    >
+      ISBN-{{ isbnLength }} is {{ isIsbnValid ? "VALID" : "INVALID" }}
+    </div>
+
+    <button
+      type="submit"
+      primary-btn
+      [disabled]="
+        !isbnForm.get('isbn')?.value || !isIsbn10Or13() || !isbnForm.valid
+      "
+    >
+      Validate
+    </button>
+    <button
+      type="button"
+      secondary-btn
+      [disabled]="!isbnForm.get('isbn')?.value || isbnLength !== 10"
+      (click)="convertToIsbn13()"
+      *ngIf="isbnLength === 10 && isbnForm.valid"
+    >
+      Convert to ISBN-13
+    </button>
+  </form>
+
+  <div class="isbn-generate">
+    <h4>Generate random ISBN</h4>
+    <button secondary-btn size="small" type="button" (click)="generateIsbn(10)">
+      Generate ISBN-10
+    </button>
+    <button secondary-btn size="small" type="button" (click)="generateIsbn(13)">
+      Generate ISBN-13
+    </button>
+  </div>
 </div>

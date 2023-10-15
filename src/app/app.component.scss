@@ -6,4 +6,121 @@
   justify-content: center;
   flex-direction: column;
   background-color: #000;
+
+  form {
+    max-width: 600px;
+    width: 600px;
+    text-align: center;
+
+    .input-container {
+      position: relative;
+      .isbn-input__icon {
+        color: #fff;
+        font-size: 2rem;
+        position: absolute;
+        right: 15px;
+        top: 5px;
+      }
+    }
+
+    button {
+      margin: 56px 16px 0 16px;
+    }
+  }
+
+  .isbn-input {
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    padding: 16px 12px;
+    border-radius: 12px;
+    border: 2px solid #fff;
+    background-color: transparent;
+    outline: none;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+    color: #fff;
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+
+    &:focus {
+      box-shadow: 0 0 2px #fff, 0 0 6px #fff, 0 0 8px #fff, 0 0 12px #fff;
+      border-color: #fff;
+    }
+
+    &--invalid {
+      border-color: var(--red);
+      box-shadow: 0 0 2px #fff, 0 0 6px #fff, 0 0 8px var(--red),
+        0 0 12px var(--red);
+    }
+
+    &--valid {
+      border-color: var(--green);
+      box-shadow: 0 0 2px #fff, 0 0 6px #fff, 0 0 8px var(--green),
+        0 0 12px var(--green);
+    }
+  }
+
+  .isbn-errors {
+    display: block;
+    color: var(--red);
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 16px;
+  }
+
+  .validation-message {
+    margin-top: 16px;
+    font-weight: bold;
+
+    &--valid {
+      color: var(--green);
+    }
+
+    &--invalid {
+      color: var(--red);
+    }
+  }
+
+  .isbn-generate {
+    margin-top: 56px;
+    text-align: center;
+
+    h4 {
+      position: relative;
+      color: #fff;
+      margin: 0;
+      margin-top: 56px;
+      margin-bottom: 32px;
+
+      &::before {
+        content: "";
+        display: block;
+        width:25%;
+        height: 2px;
+        background: #fff;
+        left: 0;
+        top: 50%;
+        position: absolute;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        width: 25%;
+        height: 2px;
+        background: #fff;
+        right: 0;
+        top: 50%;
+        position: absolute;
+      }
+    }
+
+    button {
+      margin: 0 16px;
+    }
+  }
 }
