@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { SharedModule } from './shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { SharedModule } from './shared/shared.module';
 import { TitleComponent } from './components/title/title.component';
 
 @NgModule({
@@ -12,7 +13,8 @@ import { TitleComponent } from './components/title/title.component';
   ],
   imports: [
     BrowserModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
