@@ -3,7 +3,7 @@
   <form [formGroup]="isbnForm" (ngSubmit)="validate()">
     <div class="input-container">
       <input
-      class="isbn-input"
+        class="isbn-input"
         [ngClass]="{
           'isbn-input--valid': isSubmitted && isIsbnValid,
           'isbn-input--invalid': isSubmitted && !isIsbnValid
@@ -38,6 +38,7 @@
     <button
       type="submit"
       primary-btn
+      id="submit-btn"
       [disabled]="
         !isbnForm.get('isbn')?.value || !isIsbn10Or13() || !isbnForm.valid
       "
@@ -47,6 +48,7 @@
     <button
       type="button"
       secondary-btn
+      id="convert-btn"
       [disabled]="!isbnForm.get('isbn')?.value || isbnLength !== 10"
       (click)="convertToIsbn13()"
       *ngIf="isbnLength === 10 && isbnForm.valid"
