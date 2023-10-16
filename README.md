@@ -1,6 +1,12 @@
-# IsbnConverterValidatorGenerator
+# ISBN Converter | Validator | Generator
+Angular application for:
+- validating ISBN-10 and ISBN-13
+- converting ISBN-10 to ISBN-13
+- generating random ISBN-10 or ISBN-13
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.1.
+More about ISBN: https://en.wikipedia.org/wiki/ISBN
+
+Big help was https://www.oreilly.com/library/view/regular-expressions-cookbook/9781449327453/ch04s13.html
 
 ## Development server
 
